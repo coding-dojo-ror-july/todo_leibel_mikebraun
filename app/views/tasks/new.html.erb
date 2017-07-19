@@ -1,0 +1,9 @@
+<h2>New Task</h2>
+<form action="/tasks" method="post">
+  <input name='authenticity_token' value='<%= form_authenticity_token %>' type='hidden'>
+  <label>New Task</label><br>
+  <input type="text" name="task[content]"><br>
+  <label>Due by</label><br>
+  <input type="date" name="task[due_by]"><br>
+  <input type="submit" value="Submit">
+</form>

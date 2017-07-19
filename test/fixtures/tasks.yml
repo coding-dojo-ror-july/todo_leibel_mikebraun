@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  content: MyText
+  due_by: 2017-07-17 14:38:52
+  complete: false
+
+two:
+  user: two
+  content: MyText
+  due_by: 2017-07-17 14:38:52
+  complete: false

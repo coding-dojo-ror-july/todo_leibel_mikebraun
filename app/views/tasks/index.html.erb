@@ -1,0 +1,27 @@
+<div id='tasks' >
+<h1>To Do List</h1>
+<% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+    <p style="color:red;"><%= error %></p>
+  <% end %>
+<% end %>
+
+  <ul>
+    <% @tasks.each do |task| %>
+     <% if task.complete == true  %>
+      <li><a href="/tasks/<%= task.id %>"><input type="checkbox" checked></a>
+        <%= task.content %> | <%= task.due_by.strftime("%Y %m %d") %> | <%= @hidden.to_s %>
+        
+      </li>
+     <% else %>
+      <li><a href="/tasks/<%= task.id %>"><input type="checkbox"></a>
+         <%= task.content %> | <%= task.due_by.strftime("%Y %m %d") %> | <%= @hidden.to_s %>
+      </li>
+     <% end %>
+    <% end %>
+  </ul>
+
+<a href="/tasks/?hidden=true">Hide Finished Items</a>
+<a href="/tasks/">unhide Finished Items</a>
+<a href="/tasks/new">Create New </a>
+</div>
